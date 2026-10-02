@@ -1,0 +1,121 @@
+.co {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding-top: 63px;
+  padding-bottom: 80px;
+  max-width: 1100px;
+}
+
+/* Left */
+.co-left h2 { font-size: 36px; font-weight: 600; color: #000; margin-bottom: 36px; }
+
+.co-two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.co-field { display: flex; flex-direction: column; margin-bottom: 36px; }
+.co-field label { font-size: 16px; font-weight: 500; color: #000; margin-bottom: 22px; }
+.co-field input,
+.co-select select {
+  width: 100%;
+  height: 75px;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0 24px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #000;
+  outline: none;
+}
+.co-field input:focus,
+.co-select select:focus { border-color: var(--primary); }
+.co-field input.bad { border-color: #e53e3e; }
+.co-error { color: #e53e3e; font-size: 13px; margin-top: 6px; }
+
+.co-select { position: relative; }
+.co-select select { appearance: none; -webkit-appearance: none; color: #9f9f9f; cursor: pointer; }
+.co-select svg { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 20px; pointer-events: none; }
+
+.co-info { margin-top: 20px; }
+.co-info input::placeholder { color: #9f9f9f; }
+
+/* Right */
+.co-right { padding-top: 24px; }
+.co-sum-head { display: flex; justify-content: space-between; margin-bottom: 14px; }
+.co-sum-head h3 { font-size: 24px; font-weight: 500; color: #000; }
+
+.co-sum-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 22px; font-size: 16px; color: #000; }
+.co-grey { color: #9f9f9f; }
+.co-grey b { color: #000; font-size: 12px; margin: 0 4px; }
+.co-total { color: var(--primary); font-size: 24px; font-weight: 700; }
+
+.co-right hr { border: none; border-top: 1px solid #d9d9d9; margin: 28px 0 22px; }
+
+.co-radio { display: flex; align-items: center; gap: 14px; font-size: 16px; color: #000; margin-bottom: 14px; cursor: pointer; }
+.co-radio input { position: absolute; opacity: 0; pointer-events: none; }
+.co-radio .dot { width: 14px; height: 14px; border-radius: 50%; border: 1px solid #9f9f9f; flex: 0 0 auto; }
+.co-radio input:checked + .dot { background: #000; border-color: #000; }
+
+.co-pay-text { font-size: 16px; line-height: 1.6; color: #9f9f9f; text-align: justify; margin: 0 0 22px; }
+.co-privacy { font-size: 16px; line-height: 1.6; color: #000; text-align: justify; margin: 14px 0 36px; }
+
+.co-order-wrap { text-align: center; }
+.co-order { background: #fff; border: 1px solid #000; border-radius: 15px; padding: 16px 90px; font-family: inherit; font-size: 20px; cursor: pointer; }
+.co-order:hover { background: #000; color: #fff; }
+
+/* Done / empty */
+.co-done { text-align: center; padding: 100px 20px; }
+.co-done h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+.co-done p { font-size: 18px; color: #9f9f9f; margin-bottom: 28px; }
+.co-btn { display: inline-block; border: 1px solid var(--primary); color: var(--primary); font-weight: 600; padding: 12px 60px; }
+.co-btn:hover { background: var(--primary); color: #fff; }
+
+/* ---------- Small laptop ---------- */
+@media (max-width: 1200px) {
+  .co { gap: 48px; padding-left: 24px; padding-right: 24px; }
+  .co-left h2 { font-size: 30px; margin-bottom: 28px; }
+  .co-field { margin-bottom: 26px; }
+  .co-field label { margin-bottom: 14px; }
+  .co-field input,
+  .co-select select { height: 64px; }
+  .co-order { padding: 16px 60px; }
+}
+
+/* ---------- Tablet: one column ---------- */
+@media (max-width: 900px) {
+  .co { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px 60px; max-width: 100%; }
+  .co-two { grid-template-columns: 1fr; gap: 0; }
+  .co-right { padding-top: 0; }
+  .co-pay-text,
+  .co-privacy { text-align: left; }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 600px) {
+  .co { gap: 32px; padding: 28px 16px 44px; }
+
+  .co-left h2 { font-size: 26px; margin-bottom: 22px; }
+  .co-field { margin-bottom: 20px; }
+  .co-field label { font-size: 15px; margin-bottom: 10px; }
+  .co-field input,
+  .co-select select { height: 54px; padding: 0 16px; border-radius: 8px; }
+  .co-select svg { right: 16px; }
+  .co-info { margin-top: 8px; }
+
+  .co-sum-head h3 { font-size: 20px; }
+  .co-sum-row { font-size: 15px; margin-bottom: 16px; gap: 10px; }
+  .co-total { font-size: 20px; }
+  .co-right hr { margin: 20px 0 16px; }
+
+  .co-radio { font-size: 15px; }
+  .co-pay-text,
+  .co-privacy { font-size: 14px; }
+  .co-privacy { margin-bottom: 24px; }
+
+  .co-order { width: 100%; padding: 14px 20px; font-size: 18px; }
+
+  .co-done { padding: 60px 16px; }
+  .co-done h2 { font-size: 24px; }
+  .co-done p { font-size: 16px; }
+  .co-btn { padding: 12px 40px; }
+}

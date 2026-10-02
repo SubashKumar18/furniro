@@ -1,0 +1,20 @@
+.heart-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.heart-btn:hover { color: var(--primary); }
+.heart-btn.on { color: #e53e3e; }

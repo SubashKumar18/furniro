@@ -1,0 +1,89 @@
+.cs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s;
+  z-index: 100;
+}
+.cs-overlay.show { opacity: 1; visibility: visible; }
+
+.cs-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 417px;
+  max-width: 100%;
+  height: 746px;
+  max-height: 100vh;
+  max-height: 100dvh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s, visibility 0.3s;
+  z-index: 101;
+}
+.cs-panel.open { transform: translateX(0); visibility: visible; }
+
+.cs-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 30px 0;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.cs-head h2 { font-size: 24px; font-weight: 600; color: #000; }
+.cs-head button { background: none; border: none; font-size: 22px; color: #9f9f9f; cursor: pointer; display: flex; }
+
+.cs-list { flex: 1; overflow-y: auto; padding: 24px 30px; display: flex; flex-direction: column; gap: 20px; }
+.cs-empty { text-align: center; color: #9f9f9f; margin-top: 40px; }
+
+.cs-item { display: flex; align-items: center; gap: 24px; }
+.cs-item img { width: 105px; height: 105px; object-fit: cover; border-radius: 10px; background: #f9f1e7; flex: 0 0 auto; }
+.cs-info { flex: 1; min-width: 0; }
+.cs-title { font-size: 16px; color: #000; margin-bottom: 8px; overflow-wrap: anywhere; }
+.cs-line { font-size: 12px; color: #000; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.cs-line b { color: var(--primary); font-weight: 500; }
+.cs-remove { background: none; border: none; color: #9f9f9f; font-size: 20px; cursor: pointer; display: flex; flex: 0 0 auto; }
+.cs-remove:hover { color: #e53e3e; }
+
+.cs-subtotal { display: flex; justify-content: space-between; padding: 20px 30px 26px; font-size: 16px; }
+.cs-subtotal b { color: var(--primary); font-weight: 600; margin-right: 80px; }
+
+.cs-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; border-top: 1px solid #d9d9d9; padding: 24px 20px; }
+.cs-buttons a { border: 1px solid #000; border-radius: 50px; padding: 6px 30px; font-size: 12px; color: #000; }
+.cs-buttons a:hover { background: #000; color: #fff; }
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .cs-panel { width: 380px; }
+}
+
+/* Phone: the panel fills the full screen */
+@media (max-width: 600px) {
+  .cs-panel { width: 100%; height: 100vh; height: 100dvh; }
+
+  .cs-head { margin: 18px 16px 0; padding-bottom: 18px; }
+  .cs-head h2 { font-size: 20px; }
+
+  .cs-list { padding: 18px 16px; gap: 16px; }
+  .cs-item { gap: 14px; }
+  .cs-item img { width: 80px; height: 80px; }
+  .cs-title { font-size: 15px; margin-bottom: 6px; }
+
+  .cs-subtotal { padding: 16px 16px 20px; }
+  .cs-subtotal b { margin-right: 0; }
+
+  .cs-buttons { padding: 18px 16px; gap: 10px; }
+  .cs-buttons a { padding: 8px 22px; font-size: 13px; }
+}
+
+/* Small phone */
+@media (max-width: 380px) {
+  .cs-item img { width: 64px; height: 64px; }
+  .cs-line { gap: 8px; }
+}

@@ -1,0 +1,116 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 100px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 54px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 75px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--primary); }
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 45px;
+}
+
+.nav-cart,
+.nav-burger {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+}
+.nav-cart:hover { color: var(--primary); }
+
+/* Hamburger button: hidden on laptop and tablet */
+.nav-icons .nav-burger { display: none; font-size: 28px; }
+
+.nav-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .navbar { padding: 0 24px; }
+  .nav-links { gap: 36px; }
+  .nav-icons { gap: 28px; }
+}
+
+/* Phone: menu links go into the hamburger */
+@media (max-width: 800px) {
+  .navbar {
+    height: 70px;
+    padding: 0 16px;
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-icons { gap: 18px; }
+  .nav-icons .nav-burger { display: flex; }
+  .nav-icons .ni-btn,
+  .nav-cart { font-size: 22px; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    background: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 16px 24px; font-size: 18px; }
+
+  /* Search box and user box fit the phone screen */
+  .nav-icons .ni-search {
+    position: fixed;
+    top: 78px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+  }
+  .nav-icons .ni-user {
+    position: fixed;
+    top: 78px;
+    right: 12px;
+  }
+}

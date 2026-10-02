@@ -1,0 +1,95 @@
+.cmp { padding-top: 30px; padding-bottom: 60px; }
+.cmp-msg { text-align: center; padding: 80px 0; font-size: 18px; }
+
+/* Top part */
+.cmp-head {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.cmp-intro h2 { font-size: 24px; font-weight: 500; line-height: 1.2; color: #000; max-width: 190px; margin-top: 20px; }
+.cmp-more { display: inline-block; margin-top: 12px; font-size: 16px; font-weight: 500; color: #333; border-bottom: 1px solid #333; }
+
+.cmp-img { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 280px; height: 177px; background: #f9f1e7; border-radius: 10px; margin-bottom: 14px; }
+.cmp-img img { width: 100%; height: 100%; object-fit: contain; }
+.cmp-prod h3 { font-size: 20px; font-weight: 500; color: #000; }
+.cmp-price { font-size: 14px; font-weight: 500; color: #000; margin: 6px 0; }
+.cmp-rate { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+.cmp-stars { display: flex; gap: 3px; color: #fbbf1f; font-size: 13px; }
+.cmp-vbar { width: 1px; height: 18px; background: #9f9f9f; }
+.cmp-rate small { font-size: 11px; color: #9f9f9f; }
+.cmp-remove { margin-top: 10px; background: none; border: none; font-family: inherit; font-size: 13px; color: #9f9f9f; text-decoration: underline; cursor: pointer; }
+.cmp-remove:hover { color: #e53e3e; }
+
+.cmp-add h3 { font-size: 24px; font-weight: 500; color: #000; margin-top: 24px; margin-bottom: 8px; }
+.cmp-select { position: relative; width: 100%; max-width: 232px; }
+.cmp-select select { width: 100%; height: 38px; appearance: none; -webkit-appearance: none; border: none; border-radius: 4px; background: var(--primary); color: #fff; font-family: inherit; font-size: 12px; font-weight: 600; padding: 0 40px 0 16px; cursor: pointer; }
+.cmp-select select option { color: #000; background: #fff; }
+.cmp-select svg { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #fff; font-size: 20px; pointer-events: none; }
+
+/* Table */
+.cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.cmp-table { min-width: 900px; }
+
+.cmp-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.cmp-cell { padding: 11px 0 11px 20px; font-size: 16px; color: #000; line-height: 1.4; border-right: 1px solid #f0f0f0; }
+.cmp-cell:last-child { border-right: none; }
+.cmp-label { color: #000; }
+
+.cmp-section { padding-top: 24px; padding-bottom: 28px; }
+.cmp-title-row .cmp-cell { padding-bottom: 8px; }
+.cmp-title-row h3 { font-size: 24px; font-weight: 500; color: #000; }
+
+.cmp-cart-row .cmp-cell { padding-top: 10px; }
+.cmp-cart-btn { background: var(--primary); color: #fff; border: none; font-family: inherit; font-size: 16px; font-weight: 500; padding: 22px 36px; cursor: pointer; }
+.cmp-cart-btn:hover { background: #9c7826; }
+
+/* ---------- Small laptop ---------- */
+@media (max-width: 1200px) {
+  .cmp { padding-left: 24px; padding-right: 24px; }
+  .cmp-head { gap: 16px; }
+  .cmp-prod h3 { font-size: 18px; }
+  .cmp-add h3 { font-size: 20px; }
+  .cmp-cart-btn { padding: 18px 28px; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .cmp { padding: 24px 20px 50px; }
+  .cmp-head { grid-template-columns: 1fr 1fr; gap: 28px 20px; padding-bottom: 36px; }
+  .cmp-intro { grid-column: 1 / -1; }
+  .cmp-intro h2 { max-width: none; margin-top: 0; }
+  .cmp-img { max-width: 100%; }
+  .cmp-add h3 { margin-top: 0; }
+  .cmp-select { max-width: 100%; }
+
+  .cmp-table { min-width: 720px; }
+  .cmp-row { gap: 16px; }
+  .cmp-cell { font-size: 15px; }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 600px) {
+  .cmp { padding: 20px 16px 40px; }
+  .cmp-msg { padding: 50px 0; font-size: 16px; }
+
+  .cmp-head { gap: 22px 14px; padding-bottom: 28px; }
+  .cmp-intro h2 { font-size: 20px; }
+  .cmp-img { height: 130px; margin-bottom: 10px; }
+  .cmp-prod h3 { font-size: 16px; }
+  .cmp-add h3 { font-size: 17px; }
+
+  .cmp-table { min-width: 620px; }
+  .cmp-cell { font-size: 14px; padding: 10px 0 10px 12px; }
+  .cmp-title-row h3 { font-size: 20px; }
+  .cmp-section { padding-top: 18px; padding-bottom: 20px; }
+  .cmp-cart-btn { padding: 14px 20px; font-size: 14px; }
+}
+
+/* ---------- Small phone: products in 1 column ---------- */
+@media (max-width: 380px) {
+  .cmp-head { grid-template-columns: 1fr; }
+}
